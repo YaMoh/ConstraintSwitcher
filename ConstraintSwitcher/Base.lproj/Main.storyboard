@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ConstraintSwitcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcx-nh-blL">
+                                <rect key="frame" x="42" y="191" width="120" height="219"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="31f-My-8SI"/>
+                                    <constraint firstAttribute="height" constant="20" id="UaT-2M-ahl"/>
+                                    <constraint firstAttribute="width" constant="120" id="y5u-ta-210"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UaT-2M-ahl"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtZ-lx-JDY">
+                                <rect key="frame" x="218" y="285" width="51" height="30"/>
+                                <state key="normal" title="Expand"/>
+                                <connections>
+                                    <action selector="expand" destination="DE4-2L-kgR" eventType="touchUpInside" id="9oT-Au-K7l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biV-37-zmP">
+                                <rect key="frame" x="213" y="323" width="60" height="30"/>
+                                <state key="normal" title="Contract"/>
+                                <connections>
+                                    <action selector="contract" destination="DE4-2L-kgR" eventType="touchUpInside" id="lG1-0T-UUi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arQ-36-3cu">
+                                <rect key="frame" x="220" y="247" width="47" height="30"/>
+                                <state key="normal" title="Toggle"/>
+                                <connections>
+                                    <action selector="toggle" destination="DE4-2L-kgR" eventType="touchUpInside" id="iez-ws-kIs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tcx-nh-blL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2zo-qc-ACu"/>
+                            <constraint firstItem="tcx-nh-blL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="4t5-O3-nez"/>
+                            <constraint firstItem="biV-37-zmP" firstAttribute="leading" secondItem="tcx-nh-blL" secondAttribute="trailing" constant="51" id="Hbc-Qa-A27"/>
+                            <constraint firstItem="XtZ-lx-JDY" firstAttribute="centerY" secondItem="tcx-nh-blL" secondAttribute="centerY" id="LzR-RI-Q8f"/>
+                            <constraint firstItem="XtZ-lx-JDY" firstAttribute="top" secondItem="arQ-36-3cu" secondAttribute="bottom" constant="8" id="RG8-RL-VhU"/>
+                            <constraint firstItem="biV-37-zmP" firstAttribute="top" secondItem="XtZ-lx-JDY" secondAttribute="bottom" constant="8" id="WAs-is-hb2"/>
+                            <constraint firstItem="XtZ-lx-JDY" firstAttribute="leading" secondItem="tcx-nh-blL" secondAttribute="trailing" constant="56" id="WW0-so-h8a"/>
+                            <constraint firstItem="arQ-36-3cu" firstAttribute="leading" secondItem="tcx-nh-blL" secondAttribute="trailing" constant="58" id="cMk-ae-vCO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="DE4-2L-kgR" customClass="ResizingSwitcher" customModule="ConstraintSwitcher" customModuleProvider="target">
+                    <connections>
+                        <outletCollection property="expandedConstraints" destination="31f-My-8SI" collectionClass="NSMutableArray" id="Ymw-55-bPZ"/>
+                        <outletCollection property="contractedConstraints" destination="UaT-2M-ahl" collectionClass="NSMutableArray" id="Ooe-XM-ynD"/>
+                    </connections>
+                </customObject>
+            </objects>
+        </scene>
+    </scenes>
+</document>

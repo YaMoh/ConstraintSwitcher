@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F054611C1D809EA300E1D911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054611B1D809EA300E1D911 /* AppDelegate.swift */; };
+		F05461211D809EA300E1D911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F054611F1D809EA300E1D911 /* Main.storyboard */; };
+		F05461231D809EA300E1D911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F05461221D809EA300E1D911 /* Assets.xcassets */; };
+		F05461261D809EA300E1D911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F05461241D809EA300E1D911 /* LaunchScreen.storyboard */; };
+		F054614B1D809FE000E1D911 /* ConstraintSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054614A1D809FE000E1D911 /* ConstraintSwitcher.swift */; };
+		F054614D1D80A01300E1D911 /* ResizingSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054614C1D80A01300E1D911 /* ResizingSwitcher.swift */; };
+		F05461501D80A07A00E1D911 /* DefaultConstraintSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054614F1D80A07A00E1D911 /* DefaultConstraintSwitcherTests.swift */; };
+		F05461521D80A0A900E1D911 /* ResizingSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05461511D80A0A900E1D911 /* ResizingSwitcherTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F054612D1D809EA300E1D911 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F05461101D809EA300E1D911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F05461171D809EA300E1D911;
+			remoteInfo = ConstraintSwitcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F05461181D809EA300E1D911 /* ConstraintSwitcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConstraintSwitcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F054611B1D809EA300E1D911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F05461201D809EA300E1D911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F05461221D809EA300E1D911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F05461251D809EA300E1D911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F05461271D809EA300E1D911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F054612C1D809EA300E1D911 /* ConstraintSwitcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConstraintSwitcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F05461321D809EA300E1D911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F054614A1D809FE000E1D911 /* ConstraintSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintSwitcher.swift; sourceTree = "<group>"; };
+		F054614C1D80A01300E1D911 /* ResizingSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizingSwitcher.swift; sourceTree = "<group>"; };
+		F054614F1D80A07A00E1D911 /* DefaultConstraintSwitcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultConstraintSwitcherTests.swift; sourceTree = "<group>"; };
+		F05461511D80A0A900E1D911 /* ResizingSwitcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizingSwitcherTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F05461151D809EA300E1D911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F05461291D809EA300E1D911 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F054610F1D809EA300E1D911 = {
+			isa = PBXGroup;
+			children = (
+				F054611A1D809EA300E1D911 /* ConstraintSwitcher */,
+				F054612F1D809EA300E1D911 /* ConstraintSwitcherTests */,
+				F05461191D809EA300E1D911 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F05461191D809EA300E1D911 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F05461181D809EA300E1D911 /* ConstraintSwitcher.app */,
+				F054612C1D809EA300E1D911 /* ConstraintSwitcherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F054611A1D809EA300E1D911 /* ConstraintSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				F05461491D809FD000E1D911 /* ConstraintSwitcher */,
+				F054611B1D809EA300E1D911 /* AppDelegate.swift */,
+				F054611F1D809EA300E1D911 /* Main.storyboard */,
+				F05461221D809EA300E1D911 /* Assets.xcassets */,
+				F05461241D809EA300E1D911 /* LaunchScreen.storyboard */,
+				F05461271D809EA300E1D911 /* Info.plist */,
+			);
+			path = ConstraintSwitcher;
+			sourceTree = "<group>";
+		};
+		F054612F1D809EA300E1D911 /* ConstraintSwitcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				F054614E1D80A04F00E1D911 /* ConstraintSwitcher */,
+				F05461321D809EA300E1D911 /* Info.plist */,
+			);
+			path = ConstraintSwitcherTests;
+			sourceTree = "<group>";
+		};
+		F05461491D809FD000E1D911 /* ConstraintSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				F054614A1D809FE000E1D911 /* ConstraintSwitcher.swift */,
+				F054614C1D80A01300E1D911 /* ResizingSwitcher.swift */,
+			);
+			path = ConstraintSwitcher;
+			sourceTree = "<group>";
+		};
+		F054614E1D80A04F00E1D911 /* ConstraintSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				F054614F1D80A07A00E1D911 /* DefaultConstraintSwitcherTests.swift */,
+				F05461511D80A0A900E1D911 /* ResizingSwitcherTests.swift */,
+			);
+			path = ConstraintSwitcher;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F05461171D809EA300E1D911 /* ConstraintSwitcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F05461401D809EA300E1D911 /* Build configuration list for PBXNativeTarget "ConstraintSwitcher" */;
+			buildPhases = (
+				F05461141D809EA300E1D911 /* Sources */,
+				F05461151D809EA300E1D911 /* Frameworks */,
+				F05461161D809EA300E1D911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConstraintSwitcher;
+			productName = ConstraintSwitcher;
+			productReference = F05461181D809EA300E1D911 /* ConstraintSwitcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F054612B1D809EA300E1D911 /* ConstraintSwitcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F05461431D809EA300E1D911 /* Build configuration list for PBXNativeTarget "ConstraintSwitcherTests" */;
+			buildPhases = (
+				F05461281D809EA300E1D911 /* Sources */,
+				F05461291D809EA300E1D911 /* Frameworks */,
+				F054612A1D809EA300E1D911 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F054612E1D809EA300E1D911 /* PBXTargetDependency */,
+			);
+			name = ConstraintSwitcherTests;
+			productName = ConstraintSwitcherTests;
+			productReference = F054612C1D809EA300E1D911 /* ConstraintSwitcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F05461101D809EA300E1D911 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Bespoke Code AB";
+				TargetAttributes = {
+					F05461171D809EA300E1D911 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F054612B1D809EA300E1D911 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F05461171D809EA300E1D911;
+					};
+				};
+			};
+			buildConfigurationList = F05461131D809EA300E1D911 /* Build configuration list for PBXProject "ConstraintSwitcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F054610F1D809EA300E1D911;
+			productRefGroup = F05461191D809EA300E1D911 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F05461171D809EA300E1D911 /* ConstraintSwitcher */,
+				F054612B1D809EA300E1D911 /* ConstraintSwitcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F05461161D809EA300E1D911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05461261D809EA300E1D911 /* LaunchScreen.storyboard in Resources */,
+				F05461231D809EA300E1D911 /* Assets.xcassets in Resources */,
+				F05461211D809EA300E1D911 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F054612A1D809EA300E1D911 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F05461141D809EA300E1D911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F054611C1D809EA300E1D911 /* AppDelegate.swift in Sources */,
+				F054614B1D809FE000E1D911 /* ConstraintSwitcher.swift in Sources */,
+				F054614D1D80A01300E1D911 /* ResizingSwitcher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F05461281D809EA300E1D911 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F05461501D80A07A00E1D911 /* DefaultConstraintSwitcherTests.swift in Sources */,
+				F05461521D80A0A900E1D911 /* ResizingSwitcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F054612E1D809EA300E1D911 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F05461171D809EA300E1D911 /* ConstraintSwitcher */;
+			targetProxy = F054612D1D809EA300E1D911 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F054611F1D809EA300E1D911 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F05461201D809EA300E1D911 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F05461241D809EA300E1D911 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F05461251D809EA300E1D911 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F054613E1D809EA300E1D911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F054613F1D809EA300E1D911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F05461411D809EA300E1D911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ConstraintSwitcher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bespokecode.constraintswitcher.ConstraintSwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F05461421D809EA300E1D911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ConstraintSwitcher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bespokecode.constraintswitcher.ConstraintSwitcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F05461441D809EA300E1D911 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = ConstraintSwitcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bespokecode.constraintswitcher.ConstraintSwitcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConstraintSwitcher.app/ConstraintSwitcher";
+			};
+			name = Debug;
+		};
+		F05461451D809EA300E1D911 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = ConstraintSwitcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bespokecode.constraintswitcher.ConstraintSwitcherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConstraintSwitcher.app/ConstraintSwitcher";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F05461131D809EA300E1D911 /* Build configuration list for PBXProject "ConstraintSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F054613E1D809EA300E1D911 /* Debug */,
+				F054613F1D809EA300E1D911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F05461401D809EA300E1D911 /* Build configuration list for PBXNativeTarget "ConstraintSwitcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05461411D809EA300E1D911 /* Debug */,
+				F05461421D809EA300E1D911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F05461431D809EA300E1D911 /* Build configuration list for PBXNativeTarget "ConstraintSwitcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F05461441D809EA300E1D911 /* Debug */,
+				F05461451D809EA300E1D911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F05461101D809EA300E1D911 /* Project object */;
+}
