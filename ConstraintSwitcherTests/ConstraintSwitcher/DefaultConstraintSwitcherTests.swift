@@ -253,14 +253,13 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     }
 
     fileprivate func constraintsActive(_ constraints: [NSLayoutConstraint]) -> Bool {
-        var allActive = true
         constraints.forEach { (constraint: NSLayoutConstraint) in
             if constraint.isActive == false {
-                allActive = false
+                return false
             }
         }
 
-        return allActive
+        return true
     }
 
     fileprivate func layoutIfNeededCalled(_ constraint: NSLayoutConstraint) -> Bool {
