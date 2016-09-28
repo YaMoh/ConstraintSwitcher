@@ -76,7 +76,7 @@ class ResizingSwitcherTests: XCTestCase {
             animationCorrect = argumentTuple.animated == false
         }
 
-        self.testTuple?.testObject.expand(false)
+        self.testTuple?.testObject.expand(animated: false)
 
         XCTAssertTrue(animationCorrect)
     }
@@ -124,7 +124,7 @@ class ResizingSwitcherTests: XCTestCase {
             animationCorrect = argumentTuple.animated == false
         }
 
-        self.testTuple?.testObject.contract(false)
+        self.testTuple?.testObject.contract(animated: false)
 
         XCTAssertTrue(animationCorrect)
     }
@@ -242,17 +242,17 @@ private final class TestConstraintSwitcher: ConstraintSwitcher {
     }
 
     var switchConstraintsClosure: ((_ animated: Bool, _ completion: ConstraintSwitcherCompletedClosure?) -> ())?
-    func switchConstraints(_ animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
+    func switchConstraints(animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
     }
 
 
     var activateConstraintWithTagClosure: ((ActivateConstraintWithTagArgumentTuple)->())?
-    func activateConstraintWithTag(_ tag: Int, animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
+    func activateConstraintWithTag(tag: Int, animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
         self.activateConstraintWithTagClosure?(tag: tag, animated: animated, completion: completion)
     }
     
-    var isConstraintActiveClosure: ((_ tag: Int?) -> (Bool))?
-    func isConstraintActive(_ tag: Int?) -> Bool {
+    var isConstraintActiveClosure: ((Int?) -> (Bool))?
+    func isConstraintActive(tag: Int?) -> Bool {
         return self.isConstraintActiveClosure?(tag) == true
     }
 }

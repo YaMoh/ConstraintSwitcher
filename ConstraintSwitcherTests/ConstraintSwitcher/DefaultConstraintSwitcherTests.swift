@@ -23,7 +23,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testConstraintSwitchNormalCaseAnimated() {
         let testTuple = self.createTestObjects()
 
-        testTuple.testObject.switchConstraints(true, completion: nil)
+        testTuple.testObject.switchConstraints(animated: true, completion: nil)
 
         sleep(1)
 
@@ -40,7 +40,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testConstraintSwitchNormalCaseNotAnimated() {
         let testTuple = self.createTestObjects()
 
-        testTuple.testObject.switchConstraints(false, completion: nil)
+        testTuple.testObject.switchConstraints(animated: false, completion: nil)
 
         sleep(1)
 
@@ -57,7 +57,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testConstraintSwitchNoneSet() {
         let testObject = DefaultConstraintSwitcher()
 
-        testObject.switchConstraints(true, completion: nil)
+        testObject.switchConstraints(animated: true, completion: nil)
 
         // Shouldnt crash
     }
@@ -72,7 +72,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testActivateNonActiveConstraintByTagAnimated() {
         let testTuple = self.createTestObjects()
 
-        testTuple.testObject.activateConstraintWithTag(testTuple.secondaryTag, animated: true, completion: nil)
+        testTuple.testObject.activateConstraintWithTag(tag: testTuple.secondaryTag, animated: true, completion: nil)
 
         sleep(1)
 
@@ -89,7 +89,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testActivateNonActiveConstraintByTagNotAnimated() {
         let testTuple = self.createTestObjects()
 
-        testTuple.testObject.activateConstraintWithTag(testTuple.secondaryTag, animated: false, completion: nil)
+        testTuple.testObject.activateConstraintWithTag(tag: testTuple.secondaryTag, animated: false, completion: nil)
 
         sleep(1)
 
@@ -106,7 +106,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testReActivateByTag() {
         let testTuple = self.createTestObjects()
 
-        testTuple.testObject.activateConstraintWithTag(testTuple.primaryTag, animated: false, completion: nil)
+        testTuple.testObject.activateConstraintWithTag(tag: testTuple.primaryTag, animated: false, completion: nil)
 
         sleep(1)
 
@@ -123,7 +123,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testActivateByTagNoConstraints() {
         let testObject = DefaultConstraintSwitcher()
 
-        testObject.activateConstraintWithTag(2, animated: false, completion: nil)
+        testObject.activateConstraintWithTag(tag: 2, animated: false, completion: nil)
 
         sleep(1)
         // Shouldnt crash
@@ -140,7 +140,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testIsActiveForActiveTag() {
         let testTuple = self.createTestObjects()
 
-        let testValue = testTuple.testObject.isConstraintActive(testTuple.primaryTag)
+        let testValue = testTuple.testObject.isConstraintActive(tag: testTuple.primaryTag)
 
         XCTAssertTrue(testValue)
     }
@@ -153,7 +153,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testIsActiveForInactiveTag() {
         let testTuple = self.createTestObjects()
 
-        let testValue = testTuple.testObject.isConstraintActive(testTuple.secondaryTag)
+        let testValue = testTuple.testObject.isConstraintActive(tag: testTuple.secondaryTag)
 
         XCTAssertFalse(testValue)
     }
@@ -166,7 +166,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testIsActiveWithoutConstraints() {
         let testObject = DefaultConstraintSwitcher()
 
-        let testValue = testObject.isConstraintActive(3)
+        let testValue = testObject.isConstraintActive(tag: 3)
 
         XCTAssertFalse(testValue)
     }
@@ -180,7 +180,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     func testIsActiveInvalidTag() {
         let testTuple = self.createTestObjects()
 
-        let testValue = testTuple.testObject.isConstraintActive(3)
+        let testValue = testTuple.testObject.isConstraintActive(tag: 3)
 
         XCTAssertFalse(testValue)
     }
@@ -198,11 +198,11 @@ class DefaultConstraintSwitcherTests: XCTestCase {
 
         // Ignore all return values. It should not crash - thats the point. The
         // behaviour should be undefined
-        testTuple.testObject.isConstraintActive(tag)
-        testTuple.testObject.activateConstraintWithTag(tag, animated: true, completion: nil)
-        testTuple.testObject.activateConstraintWithTag(tag, animated: false, completion: nil)
-        testTuple.testObject.switchConstraints(true, completion: nil)
-        testTuple.testObject.switchConstraints(false, completion: nil)
+        _ = testTuple.testObject.isConstraintActive(tag: tag)
+        testTuple.testObject.activateConstraintWithTag(tag: tag, animated: true, completion: nil)
+        testTuple.testObject.activateConstraintWithTag(tag: tag, animated: false, completion: nil)
+        testTuple.testObject.switchConstraints(animated: true, completion: nil)
+        testTuple.testObject.switchConstraints(animated: false, completion: nil)
 
     }
 
@@ -220,12 +220,12 @@ class DefaultConstraintSwitcherTests: XCTestCase {
 
         // Ignore all return values. It should not crash - thats the point. The
         // behaviour should be undefined
-        testObject.isConstraintActive(primaryTag)
-        testObject.isConstraintActive(secondaryTag)
-        testObject.activateConstraintWithTag(primaryTag, animated: true, completion: nil)
-        testObject.activateConstraintWithTag(secondaryTag, animated: false, completion: nil)
-        testObject.switchConstraints(true, completion: nil)
-        testObject.switchConstraints(false, completion: nil)
+        _ = testObject.isConstraintActive(tag: primaryTag)
+        _ = testObject.isConstraintActive(tag: secondaryTag)
+        testObject.activateConstraintWithTag(tag: primaryTag, animated: true, completion: nil)
+        testObject.activateConstraintWithTag(tag: secondaryTag, animated: false, completion: nil)
+        testObject.switchConstraints(animated: true, completion: nil)
+        testObject.switchConstraints(animated: false, completion: nil)
 
     }
 
@@ -253,13 +253,14 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     }
 
     fileprivate func constraintsActive(_ constraints: [NSLayoutConstraint]) -> Bool {
+        var allActive = true
         constraints.forEach { (constraint: NSLayoutConstraint) in
             if constraint.isActive == false {
-                return false
+                allActive = false
             }
         }
 
-        return true
+        return allActive
     }
 
     fileprivate func layoutIfNeededCalled(_ constraint: NSLayoutConstraint) -> Bool {
