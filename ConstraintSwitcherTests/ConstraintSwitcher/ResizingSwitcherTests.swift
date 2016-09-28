@@ -15,7 +15,7 @@ private typealias ActivateConstraintWithTagArgumentTuple = (tag: Int, animated: 
 
 class ResizingSwitcherTests: XCTestCase {
 
-    private var testTuple: (testObject: ResizingSwitcher, constraintSwitcher: TestConstraintSwitcher)?
+    fileprivate var testTuple: (testObject: ResizingSwitcher, constraintSwitcher: TestConstraintSwitcher)?
 
     override func setUp() {
         let constraintSwitcher = TestConstraintSwitcher()
@@ -210,7 +210,7 @@ class ResizingSwitcherTests: XCTestCase {
 
     //MARK: - Private function
 
-    private func areCorrectConstraintsLoaded(argumentTuple: LoadConstraintsArgumentTuple) -> Bool {
+    fileprivate func areCorrectConstraintsLoaded(_ argumentTuple: LoadConstraintsArgumentTuple) -> Bool {
         guard let expandedConstraints = self.testTuple?.testObject.expandedConstraints else {
             return false
         }
@@ -233,7 +233,7 @@ class ResizingSwitcherTests: XCTestCase {
 private final class TestConstraintSwitcher: ConstraintSwitcher {
 
     var loadConstraintsClosure: ((LoadConstraintsArgumentTuple) -> ())?
-    func loadConstraints(primaryConstraints primaryConstraints: [NSLayoutConstraint],
+    func loadConstraints(primaryConstraints: [NSLayoutConstraint],
                                             primaryTag: Int,
                                             secondaryConstraints: [NSLayoutConstraint],
                                             secondaryTag: Int) {
@@ -241,18 +241,18 @@ private final class TestConstraintSwitcher: ConstraintSwitcher {
                                      secondaryTag: secondaryTag)
     }
 
-    var switchConstraintsClosure: ((animated: Bool, completion: ConstraintSwitcherCompletedClosure?) -> ())?
-    func switchConstraints(animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
+    var switchConstraintsClosure: ((_ animated: Bool, _ completion: ConstraintSwitcherCompletedClosure?) -> ())?
+    func switchConstraints(_ animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
     }
 
 
     var activateConstraintWithTagClosure: ((ActivateConstraintWithTagArgumentTuple)->())?
-    func activateConstraintWithTag(tag: Int, animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
+    func activateConstraintWithTag(_ tag: Int, animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
         self.activateConstraintWithTagClosure?(tag: tag, animated: animated, completion: completion)
     }
     
-    var isConstraintActiveClosure: ((tag: Int?) -> (Bool))?
-    func isConstraintActive(tag: Int?) -> Bool {
-        return self.isConstraintActiveClosure?(tag: tag) == true
+    var isConstraintActiveClosure: ((_ tag: Int?) -> (Bool))?
+    func isConstraintActive(_ tag: Int?) -> Bool {
+        return self.isConstraintActiveClosure?(tag) == true
     }
 }

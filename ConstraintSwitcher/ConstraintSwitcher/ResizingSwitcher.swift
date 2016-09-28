@@ -25,7 +25,7 @@ final class ResizingSwitcher: NSObject {
     @IBOutlet var expandedConstraints:   [NSLayoutConstraint]?
     @IBOutlet var contractedConstraints: [NSLayoutConstraint]?
 
-    private let constraintSwitcher: ConstraintSwitcher
+    fileprivate let constraintSwitcher: ConstraintSwitcher
 
     //MARK: - Init functions
     required override init() {
@@ -39,43 +39,43 @@ final class ResizingSwitcher: NSObject {
     //MARK: - Public functions
 
     @IBAction func expand() {
-        self.expand(true)
+        self.expand(animated: true)
     }
 
     func expand(animated: Bool) {
         self.setupConstraintSwitcherIfNeeded()
-        self.constraintSwitcher.activateConstraintWithTag(ResizeTag.expanded.rawValue, animated: animated, completion: nil)
+        self.constraintSwitcher.activateConstraintWithTag(tag: ResizeTag.expanded.rawValue, animated: animated, completion: nil)
     }
 
     @IBAction func contract() {
-        self.contract(true)
+        self.contract(animated: true)
     }
 
     func contract(animated: Bool) {
         self.setupConstraintSwitcherIfNeeded()
-        self.constraintSwitcher.activateConstraintWithTag(ResizeTag.contracted.rawValue, animated: animated, completion: nil)
+        self.constraintSwitcher.activateConstraintWithTag(tag: ResizeTag.contracted.rawValue, animated: animated, completion: nil)
     }
 
     @IBAction func toggle() {
-        self.toggle(true)
+        self.toggle(animated: true)
     }
 
     func toggle(animated: Bool) {
         self.setupConstraintSwitcherIfNeeded()
         if self.isExpanded() {
-            self.contract(animated)
+            self.contract(animated: animated)
         } else {
-            self.expand(animated)
+            self.expand(animated: animated)
         }
     }
 
     func isExpanded() -> Bool {
-        return constraintSwitcher.isConstraintActive(ResizeTag.expanded.rawValue)
+        return constraintSwitcher.isConstraintActive(tag: ResizeTag.expanded.rawValue)
     }
 
     //MARK: - Private functions
 
-    private func setupConstraintSwitcherIfNeeded() {
+    fileprivate func setupConstraintSwitcherIfNeeded() {
         guard let expandedConstraints = self.expandedConstraints else {
             return
         }
@@ -88,7 +88,7 @@ final class ResizingSwitcher: NSObject {
         var primaryTag = ResizeTag.expanded
         var secondaryConstraints = contractedConstraints
         var secondaryTag = ResizeTag.contracted
-        if contractedConstraints.first?.active == true {
+        if contractedConstraints.first?.isActive == true {
             primaryConstraints = contractedConstraints
             primaryTag = .contracted
             secondaryConstraints = expandedConstraints

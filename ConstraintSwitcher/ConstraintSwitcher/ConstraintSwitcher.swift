@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 protocol ConstraintSwitcher: class {
-    func loadConstraints(primaryConstraints primaryConstraints: [NSLayoutConstraint],
+    func loadConstraints(primaryConstraints: [NSLayoutConstraint],
                                             primaryTag: Int,
                                             secondaryConstraints: [NSLayoutConstraint],
                                             secondaryTag: Int);
@@ -29,17 +29,17 @@ typealias ConstraintSwitcherCompletedClosure = ()->()
 final class DefaultConstraintSwitcher: ConstraintSwitcher {
 
     //Configuration
-    private let animationTime = 0.75
+    fileprivate let animationTime = 0.75
 
-    private var primaryConstraints:      [NSLayoutConstraint]?
-    private var secondaryConstraints:    [NSLayoutConstraint]?
+    fileprivate var primaryConstraints:      [NSLayoutConstraint]?
+    fileprivate var secondaryConstraints:    [NSLayoutConstraint]?
 
-    private var primaryConstraintsTag:   Int?
-    private var secondaryConstraintsTag: Int?
+    fileprivate var primaryConstraintsTag:   Int?
+    fileprivate var secondaryConstraintsTag: Int?
 
     //MARK: - Public functions
 
-    func loadConstraints(primaryConstraints primaryConstraints: [NSLayoutConstraint],
+    func loadConstraints(primaryConstraints: [NSLayoutConstraint],
                                             primaryTag: Int,
                                             secondaryConstraints: [NSLayoutConstraint],
                                             secondaryTag: Int) {
@@ -54,17 +54,17 @@ final class DefaultConstraintSwitcher: ConstraintSwitcher {
     func switchConstraints(animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
         let animationTime = animated ? self.animationTime : 0
 
-        let primaryConstraintActive = self.isConstraintActive(self.primaryConstraintsTag)
+        let primaryConstraintActive = self.isConstraintActive(tag: self.primaryConstraintsTag)
         let toActivate = primaryConstraintActive ? self.secondaryConstraints : self.primaryConstraints
         let toDeactivate = primaryConstraintActive ? self.primaryConstraints : self.secondaryConstraints
 
         let view = self.primaryConstraints?.first?.firstItem as? UIView
-        UIView.animateWithDuration(animationTime,
+        UIView.animate(withDuration: animationTime,
                                    delay: 0,
-                                   options: [.LayoutSubviews],
+                                   options: [.layoutSubviews],
                                    animations: {
-                                    self.deactivate(toDeactivate)
-                                    self.activate(toActivate)
+                                    self.deactivate(constraints: toDeactivate)
+                                    self.activate(constraints: toActivate)
                                     view?.superview?.layoutIfNeeded()
             }, completion: { (completed: Bool) in
                 completion?()
@@ -74,31 +74,31 @@ final class DefaultConstraintSwitcher: ConstraintSwitcher {
     }
 
     func activateConstraintWithTag(tag: Int, animated: Bool, completion: ConstraintSwitcherCompletedClosure?) {
-        guard !self.isConstraintActive(tag) else {
+        guard !self.isConstraintActive(tag: tag) else {
             return
         }
 
-        self.switchConstraints(animated, completion: completion)
+        self.switchConstraints(animated: animated, completion: completion)
     }
 
     func isConstraintActive(tag: Int?) -> Bool {
         if tag == primaryConstraintsTag {
-            return self.primaryConstraints?.first?.active == true
+            return self.primaryConstraints?.first?.isActive == true
         }
 
-        return self.secondaryConstraints?.first?.active == true
+        return self.secondaryConstraints?.first?.isActive == true
     }
 
     //MARK: - Private functions
-    private func deactivate(constraints: [NSLayoutConstraint]?) {
+    fileprivate func deactivate(constraints: [NSLayoutConstraint]?) {
         constraints?.forEach { (constraint: NSLayoutConstraint) in
-            constraint.active = false
+            constraint.isActive = false
         }
     }
 
-    private func activate(constraints: [NSLayoutConstraint]?) {
+    fileprivate func activate(constraints: [NSLayoutConstraint]?) {
         constraints?.forEach { (constraint: NSLayoutConstraint) in
-            constraint.active = true
+            constraint.isActive = true
         }
     }
 }

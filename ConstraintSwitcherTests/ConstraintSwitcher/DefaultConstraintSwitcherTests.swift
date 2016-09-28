@@ -231,7 +231,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
 
     //MARK: - Private functions
 
-    private func createTestObjects(primaryTag primaryTag: Int = 0, secondaryTag: Int = 1) -> TestObjectsTuple {
+    fileprivate func createTestObjects(primaryTag: Int = 0, secondaryTag: Int = 1) -> TestObjectsTuple {
         let primaryConstraints = [self.createConstraint(active: true), self.createConstraint(active: true)]
         let secondaryConstraints = [self.createConstraint(active: false), self.createConstraint(active: false)]
 
@@ -242,20 +242,20 @@ class DefaultConstraintSwitcherTests: XCTestCase {
     }
 
 
-    private func createConstraint(active active: Bool) -> NSLayoutConstraint {
+    fileprivate func createConstraint(active: Bool) -> NSLayoutConstraint {
         let constraint = TestConstraint(firstItem: self.createFirstItemView())
-        constraint.active = active
+        constraint.isActive = active
         return constraint
     }
 
-    private func createFirstItemView() -> TestView {
+    fileprivate func createFirstItemView() -> TestView {
         return TestView(superView: TestView())
     }
 
-    private func constraintsActive(constraints: [NSLayoutConstraint]) -> Bool {
+    fileprivate func constraintsActive(_ constraints: [NSLayoutConstraint]) -> Bool {
         var allActive = true
         constraints.forEach { (constraint: NSLayoutConstraint) in
-            if constraint.active == false {
+            if constraint.isActive == false {
                 allActive = false
             }
         }
@@ -263,7 +263,7 @@ class DefaultConstraintSwitcherTests: XCTestCase {
         return allActive
     }
 
-    private func layoutIfNeededCalled(constraint: NSLayoutConstraint) -> Bool {
+    fileprivate func layoutIfNeededCalled(_ constraint: NSLayoutConstraint) -> Bool {
         if let view = constraint.firstItem as? TestView {
             return view.superView!.layoutIfNeededCalled
         }
@@ -278,8 +278,8 @@ private final class TestConstraint: NSLayoutConstraint {
         _firstItem = firstItem
     }
 
-    private var _active: Bool = false
-    override var active: Bool {
+    fileprivate var _active: Bool = false
+    override var isActive: Bool {
         get {
             return _active
         }
@@ -289,7 +289,7 @@ private final class TestConstraint: NSLayoutConstraint {
         }
     }
 
-    private var _firstItem: AnyObject
+    fileprivate var _firstItem: AnyObject
     override var firstItem: AnyObject {
         get {
             return _firstItem
@@ -311,7 +311,7 @@ private final class TestView: UIView {
 
     var superView: TestView?
     init(superView: TestView? = nil) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self.superView = superView
     }
     
