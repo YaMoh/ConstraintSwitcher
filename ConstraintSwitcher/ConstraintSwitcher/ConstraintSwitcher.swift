@@ -82,7 +82,7 @@ final class DefaultConstraintSwitcher: ConstraintSwitcher {
     }
 
     func isConstraintActive(tag: Int?) -> Bool {
-        if tag == primaryConstraintsTag {
+        if tag == self.primaryConstraintsTag {
             return self.primaryConstraints?.first?.isActive == true
         }
 
